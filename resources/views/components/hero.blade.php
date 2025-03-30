@@ -1,10 +1,10 @@
-<div id='hero' class='bg-[#020542] flex h-screen'>
+<div id='hero' class='bg-gray-900 flex h-screen'>
     <div class='w-full mx-auto lg:max-w-screen-xl flex flex-col justify-center items-center text-center text-white'>
         <!-- Greeting Section -->
         <div class='flex flex-col items-center'>
             <p class='text-4xl font-bold'>Hi! <span class='wave'>👋</span></p>
             <p class='text-5xl font-bold mt-2'>I'm <span class='text-yellow-500'>Daniel</span>,</p>
-            <p class='text-5xl font-bold'>A Software Engineer</p>
+            <p class='text-5xl font-bold'>Your Software Engineer</p>
         </div>
         
         <!-- Description Section -->

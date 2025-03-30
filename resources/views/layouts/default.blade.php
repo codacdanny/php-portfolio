@@ -19,11 +19,11 @@
             <p>Contact me</p>
         </div>
         <div class=' text-center  py-2'>
-            <button class='py-3 px-6 rounded-sm bg-[#51d3d5] text-white font-semibold'>Let's Talk</button>
+            <button class='py-3 px-6 rounded-sm bg-yellow-500 text-white font-semibold'>Let's Talk</button>
         </div>
     </div>
 </header>
-<main class='bg-[#0d1154] '>
+<main class='bg-gray-800 '>
     @yield('main')
 </main>
 <footer class='bg-white flex h-[40] px-4'>
