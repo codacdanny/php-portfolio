@@ -6,6 +6,7 @@
     <title>Document</title>
     @vite('resources/css/app.css')
     @vite('resources/css/app.js')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
 <header class='bg-white flex shadow-sm'>
@@ -15,12 +16,16 @@
             <div class=' text-center text-4xl'>Daniel</div>
         </div>
         <div class='flex  text-center gap-6 py-2'>
-            <p>Home</p>
-            <p>Contact me</p>
+            <a href="{{ url('/') }}">
+                Home
+            </a>
+            <a href="{{ route('contact') }}">
+                Contact me
+            </a>
         </div>
-        <div class=' text-center  py-2'>
-            <button class='py-3 px-6 rounded-sm bg-yellow-500 text-white font-semibold'>Let's Talk</button>
-        </div>
+        <a href="{{ route('contact') }}" class="inline-block text-center py-3 px-6 rounded-sm bg-yellow-500 text-white font-semibold hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 transition">
+            Let's Talk
+        </a>
     </div>
 </header>
 <main class='bg-gray-800 '>
@@ -33,17 +38,24 @@
                 <div class='bg-yellow-500 p-4 h-8 rounded-full'></div>
                 <div class=' text-center text-4xl'>Daniel</div>
             </div>
-            <div class='flex gap-2 py-4'>
-                <div class='bg-blue-500 p-4 h-8 rounded-full'></div>
-                <div class='bg-yellow-500 p-4 h-8 rounded-full'></div>
-                <div class='bg-black p-4 h-8 rounded-full'></div>
+            <div class='flex space-x-4 mt-4'>
+                 <a href='https://www.linkedin.com/in/daniel-chinemerem/' class='bg-white text-blue-800 p-3 rounded-full hover:bg-gray-200'>
+                     <i class='fab fa-linkedin-in fa-2x'></i>
+                </a>
+                <a href='https://github.com/codacdanny' class='bg-white text-gray-800 p-3 rounded-full hover:bg-gray-200'>
+                    <i class='fab fa-github fa-2x'></i>
+                </a>
             </div>
     </div>
     <div class='h-[20]'>
 
                 <div class='flex  text-center gap-6 py-4'>
-                        <p>Home</p>
-                        <p>Contact me</p>
+                    <a href="{{ url('/') }}">
+                        Home
+                    </a>
+                    <a href="{{ route('contact') }}">
+                        Contact me
+                    </a>
                 </div>
                 <div class='bg-gray-100 w-full h-[2px] my-[20px]' ></div>
                     <div class='flex justify-between gap-4 text-wrap mb-4'>

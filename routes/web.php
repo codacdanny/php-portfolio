@@ -15,9 +15,9 @@ Route::get('/{lastname}/{fistname}', function ($firstname, $lastname) {
 
 
 //Named routes
-Route::get('/user', function () {
-    return 'User';
-})->name('testuser');
+Route::get('/contact-me', function () {
+    return view('contact-me');
+})->name('contact');
 
 //Grouped Routes
 Route::prefix("admin")->group(function () {

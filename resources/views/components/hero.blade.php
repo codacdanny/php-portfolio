@@ -18,20 +18,14 @@
         <!-- Social Media Section -->
         <div class='mt-8'>
             <p class='text-lg font-semibold'>Follow me:</p>
-            <div class='flex space-x-4 mt-4'>
-                <a href='#' class='bg-white text-blue-800 p-3 rounded-full hover:bg-gray-200'>
-                    <i class='fab fa-linkedin-in'></i>
-                </a>
-                <a href='#' class='bg-white text-gray-800 p-3 rounded-full hover:bg-gray-200'>
-                    <i class='fab fa-github'></i>
-                </a>
-                <a href='#' class='bg-white text-blue-500 p-3 rounded-full hover:bg-gray-200'>
-                    <i class='fab fa-twitter'></i>
-                </a>
-                <a href='#' class='bg-white text-pink-500 p-3 rounded-full hover:bg-gray-200'>
-                    <i class='fab fa-instagram'></i>
-                </a>
-            </div>
+           <div class='flex space-x-4 mt-4'>
+                        <a href='https://www.linkedin.com/in/daniel-chinemerem/' class='bg-white text-blue-800 p-3 rounded-full hover:bg-gray-200'>
+                            <i class='fab fa-linkedin-in fa-2x'></i>
+                        </a>
+                        <a href='https://github.com/codacdanny' class='bg-white text-gray-800 p-3 rounded-full hover:bg-gray-200'>
+                            <i class='fab fa-github fa-2x'></i>
+                        </a>
+                    </div>
         </div>
     </div>
 </div>
