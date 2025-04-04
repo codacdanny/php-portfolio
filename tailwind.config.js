@@ -7,6 +7,17 @@ export default {
 	content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
 	important: "#root",
 	theme: {
+		 extend: {
+			blur: {
+				xl: '64px',
+			},
+			backdropBlur: {
+        sm: '4px',
+      },
+      scale: {
+        '110': '1.1',
+      }
+      	},
 		fontWeight: {
 			normal: "400",
 			semibold: "500",

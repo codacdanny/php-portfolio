@@ -1,5 +1,6 @@
 @extends('layouts.default')
 
+
 @section('main')
 <div class='relative bg-gradient-to-r from-blue-900 via-gray-900 to-black py-16 px-8 overflow-hidden'>
     <!-- Decorative Background -->
@@ -57,41 +58,53 @@
 
             <!-- Right Column: Contact Form -->
             <div class='bg-gray-800 p-8 rounded-lg shadow-lg'>
-                <form method="POST" class='space-y-6'>
+                <form method="POST" action="{{ route('contact.send') }}" class='space-y-6' id="contactForm">
                     @csrf
                     <!-- Name Field -->
                     <div>
                         <label for="name" class='block text-sm font-medium text-gray-300 mb-2'>Your Name</label>
                         <input type="text" id="name" name="name" required 
-                            class='w-full px-4 py-3 rounded-lg bg-gray-700 text-white focus:ring-2 focus:ring-yellow-500 focus:outline-none'>
+                            class='w-full px-4 py-3 rounded-lg bg-gray-700 text-white focus:ring-2 focus:ring-yellow-500 focus:outline-none'
+                            oninput="checkFormValidity()">
                     </div>
 
                     <!-- Email Field -->
                     <div>
                         <label for="email" class='block text-sm font-medium text-gray-300 mb-2'>Your Email</label>
                         <input type="email" id="email" name="email" required 
-                            class='w-full px-4 py-3 rounded-lg bg-gray-700 text-white focus:ring-2 focus:ring-yellow-500 focus:outline-none'>
+                            class='w-full px-4 py-3 rounded-lg bg-gray-700 text-white focus:ring-2 focus:ring-yellow-500 focus:outline-none'
+                            oninput="checkFormValidity()">
                     </div>
 
                     <!-- Subject Field -->
                     <div>
                         <label for="subject" class='block text-sm font-medium text-gray-300 mb-2'>Subject</label>
                         <input type="text" id="subject" name="subject" required 
-                            class='w-full px-4 py-3 rounded-lg bg-gray-700 text-white focus:ring-2 focus:ring-yellow-500 focus:outline-none'>
+                            class='w-full px-4 py-3 rounded-lg bg-gray-700 text-white focus:ring-2 focus:ring-yellow-500 focus:outline-none'
+                            oninput="checkFormValidity()">
                     </div>
 
                     <!-- Message Field -->
                     <div>
                         <label for="message" class='block text-sm font-medium text-gray-300 mb-2'>Your Message</label>
                         <textarea id="message" name="message" rows="5" required 
-                            class='w-full px-4 py-3 rounded-lg bg-gray-700 text-white focus:ring-2 focus:ring-yellow-500 focus:outline-none'></textarea>
+                            class='w-full px-4 py-3 rounded-lg bg-gray-700 text-white focus:ring-2 focus:ring-yellow-500 focus:outline-none'
+                            oninput="checkFormValidity()"></textarea>
                     </div>
 
                     <!-- Submit Button -->
                     <div class='text-center'>
-                        <button type="submit" 
-                            class='py-3 px-6 rounded-lg bg-yellow-500 text-white font-semibold hover:bg-yellow-600 focus:ring-2 focus:ring-yellow-500 focus:outline-none'>
-                            Send Message
+                        <button type="submit" id="submitBtn"
+                            class='py-3 px-6 rounded-lg bg-yellow-500 text-white font-semibold hover:bg-yellow-600 focus:ring-2 focus:ring-yellow-500 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed'
+                            disabled>
+                            <span id="buttonText">Send Message</span>
+                            <span id="loadingSpinner" class="hidden">
+                                <svg class="animate-spin h-5 w-5 text-white inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                </svg>
+                                Sending...
+                            </span>
                         </button>
                     </div>
                 </form>
@@ -99,4 +112,51 @@
         </div>
     </div>
 </div>
+
+<!-- Toast Notifications -->
+<div class="fixed top-4 right-4 z-50">
+    @if(session('success'))
+        <div class="bg-green-500 text-white px-6 py-4 rounded-lg shadow-lg flex items-center space-x-2" 
+             x-data="{ show: true }" 
+             x-show="show" 
+             x-init="setTimeout(() => show = false, 3000)">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span>{{ session('success') }}</span>
+        </div>
+    @endif
+
+    @if($errors->any())
+        <div class="bg-red-500 text-white px-6 py-4 rounded-lg shadow-lg" 
+             x-data="{ show: true }" 
+             x-show="show" 
+             x-init="setTimeout(() => show = false, 3000)">
+            <ul>
+                @foreach($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+</div>
+
+<script>
+function checkFormValidity() {
+    const form = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const isValid = form.checkValidity();
+    submitBtn.disabled = !isValid;
+}
+
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    const submitBtn = document.getElementById('submitBtn');
+    const buttonText = document.getElementById('buttonText');
+    const loadingSpinner = document.getElementById('loadingSpinner');
+
+    submitBtn.disabled = true;
+    buttonText.classList.add('hidden');
+    loadingSpinner.classList.remove('hidden');
+});
+</script>
 @endsection
