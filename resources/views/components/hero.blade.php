@@ -12,7 +12,7 @@
         <div class="stars"></div>
     </div>
 
-    <div class='relative w-full mx-auto lg:max-w-screen-xl flex flex-col justify-center items-center text-center text-white'>
+    <div class='relative px-2 w-full mx-auto lg:max-w-screen-xl flex flex-col justify-center items-center text-center text-white'>
        
         <div class='flex flex-col items-center animate-fade-in'>
             <p class='text-4xl font-bold animate-slide-down'>
