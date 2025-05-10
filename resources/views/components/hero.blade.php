@@ -27,8 +27,8 @@
         </div>
         
 
-        <div class='mt-6 px-3 animate-fade-in opacity-0' style="animation-delay: 1.5s">
-            <p class='text-lg max-w-2xl'>
+        <div class='mt-6  animate-fade-in opacity-0' style="animation-delay: 1.5s">
+            <p class='text-l4 px-3 max-w-2xl'>
                 A seasoned fullstack engineer with 4+ years of experience creating modern, responsive web interfaces 
                 for enterprises in the Automobile, Entertainment and <br/> E-commerce industries. I don't just code, I analyse, understand, and make sure your ideas/products are feasible and marketable.
             </p>
