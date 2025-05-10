@@ -12,7 +12,7 @@
         <div class="stars"></div>
     </div>
 
-    <div class='relative px-2 w-full mx-auto lg:max-w-screen-xl flex flex-col justify-center items-center text-center text-white'>
+    <div class='relative w-full mx-auto lg:max-w-screen-xl flex flex-col justify-center items-center text-center text-white'>
        
         <div class='flex flex-col items-center animate-fade-in'>
             <p class='text-4xl font-bold animate-slide-down'>
@@ -27,7 +27,7 @@
         </div>
         
 
-        <div class='mt-6 animate-fade-in opacity-0' style="animation-delay: 1.5s">
+        <div class='mt-6 px-3 animate-fade-in opacity-0' style="animation-delay: 1.5s">
             <p class='text-lg max-w-2xl'>
                 A seasoned fullstack engineer with 4+ years of experience creating modern, responsive web interfaces 
                 for enterprises in the Automobile, Entertainment and <br/> E-commerce industries. I don't just code, I analyse, understand, and make sure your ideas/products are feasible and marketable.
