@@ -34,7 +34,7 @@
                     Feel free to reach out through any of the channels below.
                 </p>
                 <div class='space-y-4'>
-                    <div class='flex items-center'>
+                    <div class='flex flex-wrap wrap-break-word overflow-hidden items-center'>
                         <i class='fas fa-envelope text-yellow-500 text-xl mr-4'></i>
                         <span>danielchinemerem302@gmail.com</span>
                     </div>
